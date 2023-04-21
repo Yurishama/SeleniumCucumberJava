@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation("org.seleniumhq.selenium:selenium-java:3.141.59")
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    implementation("io.cucumber:cucumber-java:7.11.1")
+    // https://mvnrepository.com/artifact/info.cukes/cucumber-junit
+    testImplementation("info.cukes:cucumber-junit:1.2.5")
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
