@@ -5,27 +5,21 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 8
+sourceCompatibility = 13
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
-    implementation("org.seleniumhq.selenium:selenium-java:3.141.59")
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    //compile 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '4.2.0'
+    //compile 'io.cucumber', name: 'cucumber-java', version: '4.2.0'
+    testImplementation 'io.cucumber:cucumber-junit:4.2.0'
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+    //compile 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
 
-    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
-    implementation("io.cucumber:cucumber-java:7.11.1")
-    // https://mvnrepository.com/artifact/info.cukes/cucumber-junit
-    testImplementation("info.cukes:cucumber-junit:1.2.5")
-
-
-
-}
-
-test {
-    useJUnitPlatform()
 }
